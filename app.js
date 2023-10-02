@@ -2,11 +2,14 @@ const express = require('express')
 const mongoose = require('mongoose')
 const customerRoute = require('./Route/customerRoute')
 const accountRoute = require('./Route/accountRoute')
+const cors = require('cors')
 require('dotenv/config')
 
 const app = express()
 
 app.use(express.json())
+
+app.use(cors())
 
 app.get('/',(req,res)=>{
     console.log('running on 5000 port');
